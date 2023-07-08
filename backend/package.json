@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "npx eslint --fix --ext .js,.jsx .",
     "dev": "nodemon index.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "vercel-build":"anything"
   },
   "repository": {
     "type": "git",
