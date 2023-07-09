@@ -16,7 +16,7 @@ router.get("/:id", getSpecificUser);
 
 router.get("/users/me", getCurrentUser);
 
-router.put("/:id/trainer", selectTrainer);
+router.put("/me/trainer", selectTrainer);
 
 router.put("/:id/trainees", setTrainee);
 
