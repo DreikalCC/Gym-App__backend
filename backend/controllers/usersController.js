@@ -78,11 +78,7 @@ module.exports.selectTrainer = (req, res, next) => {
   console.log("body in select", req.body);
   const userId = req.user._id;
   const { trainer } = req.body;
-  User.findByIdAndUpdate(
-    { _id: userId },
-    { $addToSet: { trainer } },
-    { new: true }
-  )
+  User.findByIdAndUpdate({ _id: userId }, { $addToSet: trainer }, { new: true })
     .orFail(onOrFail)
     //.then(() => User.findById(userId))
     .then((data) => {
