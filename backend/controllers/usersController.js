@@ -84,7 +84,7 @@ module.exports.selectTrainer = (req, res, next) => {
     { new: true }
   )
     .orFail(onOrFail)
-    //.then(() => User.findById(userId))
+    .then(() => User.findById(userId))
     .then((data) => {
       res.send({ status: true, data });
     })
