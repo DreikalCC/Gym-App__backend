@@ -80,11 +80,11 @@ module.exports.selectTrainer = (req, res, next) => {
   const { trainer } = req.body;
   User.findByIdAndUpdate(
     { _id: userId },
-    { $addToSet: { trainer: trainer } },
+    { $addToSet: { trainer } },
     { new: true }
   )
     .orFail(onOrFail)
-    .then(() => User.findById(userId))
+    //.then(() => User.findById(userId))
     .then((data) => {
       res.send({ status: true, data });
     })
@@ -93,9 +93,9 @@ module.exports.selectTrainer = (req, res, next) => {
 
 module.exports.setTrainee = (req, res, next) => {
   const userId = req.user._id;
-  const { trainee } = req.body;
+  const { trainee, trainer } = req.body;
   User.findByIdAndUpdate(
-    { _id: userId },
+    { _id: trainer },
     { $addToSet: { trainee } },
     { new: true }
   )
