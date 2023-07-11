@@ -74,8 +74,6 @@ module.exports.createUser = (req, res, next) => {
 };
 
 module.exports.selectTrainer = (req, res, next) => {
-  console.log("user in select", req.user);
-  console.log("body in select", req.body);
   const userId = req.user._id;
   const { trainer } = req.body;
   User.findByIdAndUpdate(
