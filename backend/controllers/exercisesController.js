@@ -1,6 +1,6 @@
 const Exercise = require("../models/exerciseModel");
-
-const NotFoundError = require("../errors/not-found");
+const error = require("../errors/errors");
+const NotFoundError = error.NotFoundError;
 
 function onOrFail() {
   throw new NotFoundError("No se ha encontrado ninguna tarjeta");

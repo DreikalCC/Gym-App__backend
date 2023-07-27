@@ -2,7 +2,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 
-const NotFoundError = require("../errors/not-found");
+const errors = require("../errors/errors");
+const NotFoundError = errors.NotFoundError;
 
 function onOrFail() {
   throw new NotFoundError("No se ha encontrado ningún usuario");
