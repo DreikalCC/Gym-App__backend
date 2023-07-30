@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
-const Unauthorized = require("../errors/unauthorized");
+const errors = require("../errors/errors");
+const Unauthorized = errors.NotAuthorized;
 
 function handleAuthError() {
   throw new Unauthorized("No se cuenta con autorización");
